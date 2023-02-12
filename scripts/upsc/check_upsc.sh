@@ -45,7 +45,7 @@ do
     then
         if [ ${counter} -eq 0 ];
         then
-            sendemail -f "${FROM}" -t ${TO} -s smtp.gmail.com:587 -u "Informe de carga" -m "Informe de carga de UPSC:${charge}%"  -v -xu "${USER}" -xp "${PASSWORD}" -o tls=yes -v 2>&1 | tee "${log_file}"
+            sendemail -f "${FROM}" -t "${TO}" -s smtp.gmail.com:587 -u "Informe de carga" -m "Informe de carga de UPSC:${charge}%"  -v -xu "${USER}" -xp "${PASSWORD}" -o tls=yes -v 2>&1 | tee "${log_file}"
             ((counter++))
         else
             if [ ${counter} -ge ${recheck_time} ];
