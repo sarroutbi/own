@@ -1,0 +1,61 @@
+;; Enhanced Rust mode with automatic LSP support.
+(use-package rustic
+  :config
+  (setq
+   ;; eglot seems to be the best option right now.
+   rustic-lsp-client 'eglot
+   rustic-format-on-save nil
+   ;; Prevent automatic syntax checking, which was causing lags and stutters.
+   eglot-send-changes-idle-time (* 60 60)
+   )
+  ;; Disable the annoying doc popups in the minibuffer.
+  (add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
+  )
+
+;; No bars, no toolbars, no menus
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+
+;; No lag for eglot
+eglot-send-changes-idle-time (* 60 60)
+(add-hook 'eglot-managed-mode-hook (lambda () (eldoc-mode -1)))
+
+;; iswitch mode
+(iswitchb-mode 1)
+(icomplete-mode 1)
+(ido-mode 1)
+
+;; set frame title format
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(info-title-3 ((t (:inherit info-title-4 :foreground "white" :height 1.2))))
+ '(info-title-4 ((t (:inherit info-title-4 :foreground "black"))))
+ '(mode-line ((t (:background "#000000" :foreground "#FFFFFF" :box (:line-width 3 :color "#6483af") :weight ultra-bold :height 118 :family "Monospace")))))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   '(eglot yasnippet yaml-mode rustic req-package neotree lsp-ui irony-eldoc icomplete-vertical go-mode go-autocomplete flymd flymake-go flycheck-irony flycheck-bashate exec-path-from-shell dockerfile-mode diminish company-irony atom-one-dark-theme anaconda-mode)))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+(setq-default indent-tabs-mode nil) ; Use spaces instead of tabs
+(setq tab-width 4)
+(put 'upcase-region 'disabled nil)
+
+;; Define function to call when loads
+(defun my-after-save-actions ()
+;;  (add-hook 'before-save-hook 'rustic-format-file)) ;; rustfmt before every save
+  (add-hook 'before-save-hook 'rustic-format-buffer)) ;; rustfmt before every save
+  (add-hook 'after-save-hook 'my-after-save-actions)
