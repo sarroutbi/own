@@ -16,8 +16,8 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-for docker_image in $(docker images| grep tang-operator | egrep -E 'v[0-9]' | awk '{print $1":"$2}');
+for docker_image in $(docker images| grep tang-operator | grep -E 'v[0-9]' | awk '{print $1":"$2}');
 do 
-  docker rmi $docker_image;
+  docker rmi "${docker_image}";
 done
-docker rmi $(docker images -f "dangling=true" -q)
+docker rmi "$(docker images -f "dangling=true" -q)"
