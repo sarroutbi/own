@@ -14,9 +14,10 @@
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
 name=$(pwd | awk -F '/' '{print $NF}')
+date=$(date +%Y%m%d%H%M%S)
 export RUSTFLAGS="-Cinstrument-coverage"
 cargo build
-export LLVM_PROFILE_FILE="${name}-%p-%m.profraw"
+export LLVM_PROFILE_FILE="${name}-%p-%m-${date}.profraw"
 cargo test
 grcov . -s . --binary-path ./target/debug/ -t html --branch --ignore-not-existing -o ./target/debug/coverage/
 firefox ./target/debug/coverage/index.html
