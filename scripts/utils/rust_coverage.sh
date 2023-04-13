@@ -13,6 +13,37 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 
+gclean=
+
+usage ()
+{
+    echo
+    echo "Usage:   $0 [-c] "
+    echo
+}
+
+usage_exit ()
+{
+    usage
+    exit "$1"
+}
+
+while getopts "ch" OPTION
+do
+     case $OPTION in
+         c)
+             gclean="1"
+             ;;
+         h)
+             usage_exit 0
+             ;;
+         ?)
+             usage
+             exit
+             ;;
+     esac
+done
+
 name=$(pwd | awk -F '/' '{print $NF}')
 date=$(date +%Y%m%d%H%M%S)
 export RUSTFLAGS="-Cinstrument-coverage"
@@ -21,3 +52,7 @@ export LLVM_PROFILE_FILE="${name}-%p-%m-${date}.profraw"
 cargo test
 grcov . -s . --binary-path ./target/debug/ -t html --branch --ignore-not-existing -o ./target/debug/coverage/
 firefox ./target/debug/coverage/index.html
+
+if [ -n "${gclean}" ]; then
+    rm -v ./*"${date}".profraw;
+fi
