@@ -12,8 +12,8 @@ echo "XMOBAR PID:${xmobar_pid}"
 
 while true;
 do
-  xmonad_max_pipe=$(ls -1 /proc/"${xmonad_pid}"/fd/ | sort -n | tail -1)
-  xmobar_max_pipe=$(ls -1 /proc/"${xmobar_pid}"/fd/ | sort -n | tail -1)
+  xmonad_max_pipe=$(find . -iname "/proc/${xmonad_pid}/fd/*" | sort -n | tail -1)
+  xmobar_max_pipe=$(find . -iname "/proc/${xmobar_pid}/fd/*" | sort -n | tail -1)
   echo "XMONAD MAX PIPE:${xmonad_max_pipe}"
   echo "XMOBAR MAX PIPE:${xmobar_max_pipe}"
   for xmonad_fd in $(seq 0 "${xmonad_max_pipe}");
