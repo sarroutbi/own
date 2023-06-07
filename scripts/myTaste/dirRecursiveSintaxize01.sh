@@ -14,8 +14,6 @@ do
   if test -d "$i";
   then
     echo "Detected dir [$i]:"
-    cd $i
-      ${SINTAXIZE_PATH}/${SINTAXIZE_SCRIPT_RECURSIVE} 
-    cd - 
+    (cd "$i" && ${SINTAXIZE_PATH}/${SINTAXIZE_SCRIPT_RECURSIVE})
   fi
 done
