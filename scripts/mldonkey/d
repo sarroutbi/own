@@ -1,2 +1,2 @@
 #!/bin/bash
-snd_ml_auth.exp d $1
+snd_ml_auth.exp d "$1"
