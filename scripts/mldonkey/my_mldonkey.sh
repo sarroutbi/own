@@ -11,11 +11,11 @@ WAIT_FOR_MLNET_RUN="5"
 PORT="4000"
 HOST="localhost"
 MLDNET="/usr/local/bin/mlnet &"
-DESIRED_SERVERS="Razorback DonkeyServer"
+# DESIRED_SERVERS="Razorback DonkeyServer"
 THIS_HOME="/home/user"
 THIS_PATH="${THIS_HOME}/bin/mldonkey/"
-LOGIN=admin
-PASSWORD=YOUR_PASSWORD_HERE
+LOGIN="admin"
+PASSWORD="YOUR_PASSWORD_HERE"
 
 ## NOT CONFIGURABLE VARIABLES
 #
@@ -29,7 +29,7 @@ DESIRED_SERVERS_ID=
 function fill_des_id_my_mldonkey
 {
 	sleep 5
-	for i in `${THIS_PATH}/snd_ml_auth.exp vma | grep $1 | awk {'print $2'} | tr -d "]"`;
+	for i in $(${THIS_PATH}/snd_ml_auth.exp vma | grep "$1" | awk '{print $2}' | tr -d "]");
         do
 		DESIRED_SERVERS_ID=$DESIRED_SERVERS_ID" "$i
 	done
@@ -39,15 +39,13 @@ function fill_des_id_my_mldonkey
 # the parameter passed, whti must be the desired server  
 function kill_mld_console_my_mldonkey
 {
-	let MLD_CONSOLE_RUNNING=1
+	MLD_CONSOLE_RUNNING=1
         while [ ${MLD_CONSOLE_RUNNING} -eq 1 ];
         do
-		ps a | awk {'print $5" "$6" "$7'} | grep "telnet ${HOST} ${PORT}" >> /dev/null
-		# If consoles still running ...
-		if [ $? -eq 0 ];
+		if ps a | awk '{print $5" "$6" "$7}' | grep "telnet ${HOST} ${PORT}" >> /dev/null;
 		then
-			PIDS=`ps a | grep "telnet ${HOST} ${PORT}" | awk {'print $1'}`
-			kill -9 ${PIDS} >> /dev/null
+			PIDS=$(pgrep "telnet ${HOST} ${PORT}" | awk '{print $1}')
+			kill -9 "${PIDS}" >> /dev/null
 		else
 			MLD_CONSOLE_RUNNING="0"
 		fi
@@ -58,13 +56,11 @@ function main_my_mldonkey
 {
 	# 0 - Init
 	DESIRED_SERVERS_ID=""
-	cd ${THIS_PATH}
+	cd ${THIS_PATH} || exit
         export PATH
  
 	# 1 - Check if mld running
-	${THIS_PATH}/snd_ml_auth.exp vd
-	
-	if [ $? -ne 0 ]
+	if ! ${THIS_PATH}/snd_ml_auth.exp vd;
 	then 
 		echo "mldonkey not running, trying to run it ..."
 		${MLDNET} &
@@ -75,7 +71,6 @@ function main_my_mldonkey
 	fi
 	
 	# 2 - Kill opened consoles and auth
-	
 	kill_mld_console_my_mldonkey
 	
 	# 3 - Connect to desired servers 
@@ -96,7 +91,7 @@ function main_my_mldonkey
 ######### PROGRAM ########
 # - Perform main program
 #   repeating each MY_TIMER scs.
-while [ "1" == "1" ];
+while true ;
 do
 	main_my_mldonkey;
 	sleep ${MY_TIMER}
