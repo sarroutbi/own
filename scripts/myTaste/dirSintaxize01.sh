@@ -5,12 +5,12 @@
 # Quitting spaces and adding Capital Letter to Word after spaces
 #
 
-ls -d * | while read entrada; 
+find . -iname "*" | while read -r entrada;
 do
-  salida_tmp=$(/home/sarroutbi/bin/strings/toLower.sh "$entrada")
-  salida=$(/home/sarroutbi/bin/strings/noSpacesAndUpper.sh "$salida_tmp")
+  salida_tmp=$(/home/sarroutb/RedHat/TASKS/OWN/own/scripts/strings/toLower.sh "$entrada")
+  salida=$(/home/sarroutb/RedHat/TASKS/OWN/own/scripts/strings/noSpacesAndUpper.sh "$salida_tmp")
   if [ "$salida" != "$entrada" ];
-  then  
+  then
     mv "$entrada" "$salida";
   fi
 done
