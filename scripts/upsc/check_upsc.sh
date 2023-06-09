@@ -57,7 +57,7 @@ do
             sleep 1
         fi
     else
-        sendemail -f "${FROM}" -t ${TO} -s smtp.gmail.com:587 -u "Informe de carga" -m "Warning, informe de carga de UPSC:${charge}%, posible corte de luz" -v -xu "${USER}" -xp "${PASSWORD}" -o tls=yes -v 2>&1 | tee "${log_file}"
+        sendemail -f "${FROM}" -t "${TO}" -s smtp.gmail.com:587 -u "Informe de carga" -m "Warning, informe de carga de UPSC:${charge}%, posible corte de luz" -v -xu "${USER}" -xp "${PASSWORD}" -o tls=yes -v 2>&1 | tee "${log_file}"
         sleep "${recheck_on_power_down_time}"
     fi
 done
