@@ -15,4 +15,4 @@ then
   exit 1 
 fi
 
-echo $1 | tr -d " "
+echo "$1" | tr -d " "
