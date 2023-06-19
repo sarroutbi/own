@@ -1,2 +1,2 @@
 #!/bin/bash
-tsocks ./$1 
+tsocks "./$1" 
