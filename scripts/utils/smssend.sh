@@ -37,7 +37,7 @@ usage ()
 usage_exit ()
 {
     usage 
-    exit $1
+    exit "$1"
 } 
 
 while getopts "u:p:f:t:m:vh" OPTION
@@ -81,7 +81,7 @@ if [ -z "$SMS_TEXT" ]; then usage_exit 5; fi
 #URL="https://www.voipbuster.com/myaccount/sendsms.php?username=$USER&password=$PASS&from=$FROM&to=\"$TO\"&text=$SMS_TEXT"
 URL="https://www.voipbuster.com/myaccount/sendsms.php?username=$USER&password=$PASS&from=$FROM&to=$TO&text=$SMS_TEXT"
 
-if [ ! -z ${VERBOSE} ]; then
+if [ -n "${VERBOSE}" ]; then
   echo "USER=$USER"
   echo "PASS=$PASS"
   echo "FROM=$FROM"
