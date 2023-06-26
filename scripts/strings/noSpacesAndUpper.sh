@@ -18,23 +18,19 @@ then
   exit 1 
 fi
 
-let iteration=0
+iteration=0
 
 for i in $1; 
 do 
-  init=$(echo $i | cut -c1)
+  init=$(echo "$i" | cut -c1)
   Init=$(toUpper.sh "$init")
-  Rest=$(echo $i | cut -c2-)
-#  echo "i:$i"
-#  echo "in:$init"
-#  echo "In:$Init"
-#  echo "Rest:$Rest"
+  Rest=$(echo "$i" | cut -c2-)
   if [ $iteration -eq 0 ];
   then
-    echo -n $i 
+    echo -n "$i"
   else
-    echo -n ${Init}${Rest}
+    echo -n "${Init}${Rest}"
   fi
-  let iteration=$iteration+1
+  ((iteration++))
 done
 
