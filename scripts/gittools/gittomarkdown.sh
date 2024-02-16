@@ -19,7 +19,7 @@ LINES=""
 usage ()
 {
     echo
-    echo "Usage:   $0 -l lines "
+    echo "Usage:   $0 -l lines [-h]"
     echo "Example: $0 -l 30"
     echo
 }
@@ -31,7 +31,7 @@ usage_exit ()
 }
 
 
-while getopts "l:vh" OPTION
+while getopts "l:h" OPTION
 do
      case $OPTION in
          l)
@@ -40,9 +40,8 @@ do
          h)
              usage_exit 0
              ;;
-         ?)
-             usage
-             exit
+         *)
+             usage_exit 1
              ;;
      esac
 done
