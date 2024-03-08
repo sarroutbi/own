@@ -1,157 +1,157 @@
 ---
 created_by: sarroutbi
 seed_examples:
-  - answer: italy-is-my-favorite-country
+  - answer: italy_is_my_favorite_country
     question:
       "Convert this text into its Snake case form: Italy is my favorite country"
-  - answer: i-plan-to-spend-two-weeks-there-next-year
+  - answer: i_plan_to_spend_two_weeks_there_next_year
     question:
       "Convert this text into its Snake case form: I plan to spend two weeks there next year"
-  - answer: weather-is-not-trivial
+  - answer: weather_is_not_trivial
     question:
       "Convert this text into its Snake case form: Weather is not trivial"
-  - answer: it-is-especially-important-when-you-are-standing-in-it
+  - answer: it_is_especially_important_when_you_are_standing_in_it
     question:
       "Convert this text into its Snake case form: It is especially important when you are standing in it"
-  - answer: jason-lived-his-life-by-his-own-motto
+  - answer: jason_lived_his_life_by_his_own_motto
     question:
       "Convert this text into its Snake case form: Jason lived his life by his own motto"
-  - answer: anything-worth-doing-is-worth-doing-poorly
+  - answer: anything_worth_doing_is_worth_doing_poorly
     question:
       "Convert this text into its Snake case form: Anything worth doing is worth doing poorly"
-  - answer: pink-horses-galloped-across-the-sea
+  - answer: pink_horses_galloped_across_the_sea
     question:
       "Convert this text into its Snake case form: Pink horses galloped across the sea"
-  - answer: i-just-wanted-to-tell-you-i-could-see-the-love-you-have-for-your-child-by-the-way-you-look-at-her
+  - answer: i_just_wanted_to_tell_you_i_could_see_the_love_you_have_for_your_child_by_the_way_you_look_at_her
     question:
       "Convert this text into its Snake case form: I just wanted to tell you I could see the love you have for your child by the way you look at her"
-  - answer: the-rain-pelted-the-windshield-as-the-darkness-engulfed-us
+  - answer: the_rain_pelted_the_windshield_as_the_darkness_engulfed_us
     question:
       "Convert this text into its Snake case form: The rain pelted the windshield as the darkness engulfed us"
-  - answer: the-tart-lemonade-quenched-her-thirst
+  - answer: the_tart_lemonade_quenched_her_thirst
     question:
       "Convert this text into its Snake case form: The tart lemonade quenched her thirst"
-  - answer: this-is-the-last-random-sentence-i-will-be-writing
+  - answer: this_is_the_last_random_sentence_i_will_be_writing
     question:
       "Convert this text into its Snake case form: This is the last random sentence I will be writing"
-  - answer: grape-jelly-was-leaking-out-the-hole-in-the-roof
+  - answer: grape_jelly_was_leaking_out_the_hole_in_the_roof
     question:
       "Convert this text into its Snake case form: Grape jelly was leaking out the hole in the roof"
-  - answer: she-traveled-because-it-cost-the-same-as-therapy-and-was-a-lot-more-enjoyable
+  - answer: she_traveled_because_it_cost_the_same_as_therapy_and_was_a_lot_more_enjoyable
     question:
       "Convert this text into its Snake case form: She traveled because it cost the same as therapy and was a lot more enjoyable"
-  - answer: henry-could-not-decide-if-he-was-an-auto-mechanic-or-a-priest
+  - answer: henry_could_not_decide_if_he_was_an_auto_mechanic_or_a_priest
     question:
       "Convert this text into its Snake case form: Henry could not decide if he was an auto mechanic or a priest"
-  - answer: the-rapture-happened-yesterday-but-it-did-not-quite-go-as-expected
+  - answer: the_rapture_happened_yesterday_but_it_did_not_quite_go_as_expected
     question:
       "Convert this text into its Snake case form: The Rapture happened yesterday but it did not quite go as expected"
-  - answer: kevin-embraced-his-ability-to-be-at-the-wrong-place-at-the-wrong-time
+  - answer: kevin_embraced_his_ability_to_be_at_the_wrong_place_at_the_wrong_time
     question:
       "Convert this text into its Snake case form: Kevin embraced his ability to be at the wrong place at the wrong time"
-  - answer: he-dreamed-of-leaving-his-law-firm-to-open-a-portable-dog-wash
+  - answer: he_dreamed_of_leaving_his_law_firm_to_open_a_portable_dog_wash
     question:
       "Convert this text into its Snake case form: He dreamed of leaving his law firm to open a portable dog wash"
-  - answer: they-did-nothing-as-the-raccoon-attacked-the-lady
+  - answer: they_did_nothing_as_the_raccoon_attacked_the_lady
     question:
       "Convert this text into its Snake case form: They did nothing as the raccoon attacked the lady"
-  - answer: he-realized-he-could-see-sound-and-hear-words
+  - answer: he_realized_he_could_see_sound_and_hear_words
     question:
       "Convert this text into its Snake case form: He realized he could see sound and hear words"
-  - answer: he-had-always-believed-that-security-complexes-were-psychological
+  - answer: he_had_always_believed_that_security_complexes_were_psychological
     question:
       "Convert this text into its Snake case form: He had always believed that security complexes were psychological"
-  - answer: at-last-martha-came-to-the-conclusion-that-shake-weights-are-a-great-gift-for-any-occasion
+  - answer: at_last_martha_came_to_the_conclusion_that_shake_weights_are_a_great_gift_for_any_occasion
     question:
       "Convert this text into its Snake case form: At last Martha came to the conclusion that shake weights are a great gift for any occasion"
-  - answer: a-suit-of-armor-provides-excellent-sun-protection-on-hot-days
+  - answer: a_suit_of_armor_provides_excellent_sun_protection_on_hot_days
     question:
       "Convert this text into its Snake case form: A suit of armor provides excellent sun protection on hot days"
-  - answer: the-golden-retriever-loved-the-fireworks-each-fourth-of-july
+  - answer: the_golden_retriever_loved_the_fireworks_each_fourth_of_july
     question:
       "Convert this text into its Snake case form: The golden retriever loved the fireworks each Fourth of July"
-  - answer: let-me-help-you-with-your-baggage
+  - answer: let_me_help_you_with_your_baggage
     question:
       "Convert this text into its Snake case form: Let me help you with your baggage"
-  - answer: all-they-could-see-was-the-blue-water-surrounding-their-sailboat
+  - answer: all_they_could_see_was_the_blue_water_surrounding_their_sailboat
     question:
       "Convert this text into its Snake case form: All they could see was the blue water surrounding their sailboat"
-  - answer: he-decided-to-fake-his-disappearance-to-avoid-jail
+  - answer: he_decided_to_fake_his_disappearance_to_avoid_jail
     question:
       "Convert this text into its Snake case form: He decided to fake his disappearance to avoid jail"
-  - answer: some-bathing-suits-just-should-not-be-worn-by-some-people
+  - answer: some_bathing_suits_just_should_not_be_worn_by_some_people
     question:
       "Convert this text into its Snake case form: Some bathing suits just should not be worn by some people"
-  - answer: people-who-insist-on-picking-their-teeth-with-their-elbows-are-so-annoying
+  - answer: people_who_insist_on_picking_their_teeth_with_their_elbows_are_so_annoying
     question:
       "Convert this text into its Snake case form: People who insist on picking their teeth with their elbows are so annoying"
-  - answer: my-kittens-are-scratching-at-the-bathtub-and-they-willl-upset-by-the-lack-of-biscuits
+  - answer: my_kittens_are_scratching_at_the_bathtub_and_they_willl_upset_by_the_lack_of_biscuits
     question:
       "Convert this text into its Snake case form: My kittens are scratching at the bathtub and they willl upset by the lack of biscuits"
-  - answer: even-though-he-thought-the-world-was-flat-he-did-not-see-the-irony-of-wanting-to-travel-around-the-world
+  - answer: even_though_he_thought_the_world_was_flat_he_did_not_see_the_irony_of_wanting_to_travel_around_the_world
     question:
       "Convert this text into its Snake case form: Even though he thought the world was flat he did not see the irony of wanting to travel around the world"
-  - answer: he-played-the-game-as-if-his-life-depended-on-it-and-the-truth-was-that-it-did
+  - answer: he_played_the_game_as_if_his_life_depended_on_it_and_the_truth_was_that_it_did
     question:
       "Convert this text into its Snake case form: He played the game as if his life depended on it and the truth was that it did"
-  - answer: flesh-colored-yoga-pants-were-far-worse-than-even-he-feared
+  - answer: flesh_colored_yoga_pants_were_far_worse_than_even_he_feared
     question:
       "Convert this text into its Snake case form: Flesh colored yoga pants were far worse than even he feared"
-  - answer: edith-could-decide-if-she-should-paint-her-teeth-or-brush-her-nails
+  - answer: edith_could_decide_if_she_should_paint_her_teeth_or_brush_her_nails
     question:
       "Convert this text into its Snake case form: Edith could decide if she should paint her teeth or brush her nails"
-  - answer: her-scream-silenced-the-rowdy-teenagers
+  - answer: her_scream_silenced_the_rowdy_teenagers
     question:
       "Convert this text into its Snake case form: Her scream silenced the rowdy teenagers"
-  - answer: erin-accidentally-created-a-new-universe
+  - answer: erin_accidentally_created_a_new_universe
     question:
       "Convert this text into its Snake case form: Erin accidentally created a new universe"
-  - answer: joe-made-the-sugar-cookies-and-susan-decorated-them
+  - answer: joe_made_the_sugar_cookies_and_susan_decorated_them
     question:
       "Convert this text into its Snake case form: Joe made the sugar cookies and Susan decorated them"
-  - answer: she-learned-that-water-bottles-are-no-longer-just-to-hold-liquid
+  - answer: she_learned_that_water_bottles_are_no_longer_just_to_hold_liquid
     question:
       "Convert this text into its Snake case form: She learned that water bottles are no longer just to hold liquid"
-  - answer: he-set-out-for-a-short-walk
+  - answer: he_set_out_for_a_short_walk
     question:
       "Convert this text into its Snake case form: He set out for a short walk"
-  - answer: the-father-handed-each-child-a-roadmap-at-the-beginning-of-the-2-day-road-trip-and-explained-it-was-so-they-could-find-their-way-home
+  - answer: the_father_handed_each_child_a_roadmap_at_the_beginning_of_the_2_day_road_trip_and_explained_it_was_so_they_could_find_their_way_home
     question:
       "Convert this text into its Snake case form: The father handed each child a roadmap at the beginning of the 2 day road trip and explained it was so they could find their way home"
-  - answer: they-got-there-early
+  - answer: they_got_there_early
     question:
       "Convert this text into its Snake case form: They got there early"
-  - answer: the-mysterious-diary-records-the-voice
+  - answer: the_mysterious_diary_records_the_voice
     question:
       "Convert this text into its Snake case form: The mysterious diary records the voice"
-  - answer: i-was-very-proud-of-my-nickname-throughout-high-school
+  - answer: i_was_very_proud_of_my_nickname_throughout_high_school
     question:
       "Convert this text into its Snake case form: I was very proud of my nickname throughout high school"
-  - answer: douglas-figured-the-best-way-to-succeed-was-to-do-the-opposite-of-what-he-had-been-doing-all-his-life
+  - answer: douglas_figured_the_best_way_to_succeed_was_to_do_the_opposite_of_what_he_had_been_doing_all_his_life
     question:
       "Convert this text into its Snake case form: Douglas figured the best way to succeed was to do the opposite of what he had been doing all his life"
-  - answer: the-sign-said-there-was-road-work-ahead-so-he-decided-to-speed-up
+  - answer: the_sign_said_there_was_road_work_ahead_so_he_decided_to_speed_up
     question:
       "Convert this text into its Snake case form: The sign said there was road work ahead so he decided to speed up"
-  - answer: i-was-fishing-for-compliments-and-accidentally-caught-a-trout
+  - answer: i_was_fishing_for_compliments_and_accidentally_caught_a_trout
     question:
       "Convert this text into its Snake case form: I was fishing for compliments and accidentally caught a trout"
-  - answer: rock-music-approaches-at-high-velocity
+  - answer: rock_music_approaches_at_high_velocity
     question:
       "Convert this text into its Snake case form: Rock music approaches at high velocity"
-  - answer: she-wrote-him-a-long-letter
+  - answer: she_wrote_him_a_long_letter
     question:
       "Convert this text into its Snake case form: She wrote him a long letter"
-  - answer: the-lake-is-a-long-way-from-here
+  - answer: the_lake_is_a_long_way_from_here
     question:
       "Convert this text into its Snake case form: The lake is a long way from here"
-  - answer: they-finished-building-the-road-they-knew-no-one-would-ever-use
+  - answer: they_finished_building_the_road_they_knew_no_one_would_ever_use
     question:
       "Convert this text into its Snake case form: They finished building the road they knew no one would ever use"
-  - answer: she-folded-her-handkerchief-neatly
+  - answer: she_folded_her_handkerchief_neatly
     question:
       "Convert this text into its Snake case form: She folded her handkerchief neatly"
-  - answer: she-opened-up-her-third-bottle-of-wine-of-the-night
+  - answer: she_opened_up_her_third_bottle_of_wine_of_the_night
     question:
       "Convert this text into its Snake case form: She opened up her third bottle of wine of the night"
 task_description: This skill provides the ability to convert text into its Snake case form.

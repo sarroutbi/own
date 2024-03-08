@@ -40,7 +40,7 @@ echo "seed_examples:"
 cat "${SENTENCES_FILE}" | while read sentence;
 do
     question="Convert this text into its Snake case form: $(echo -n "${sentence}")"
-    answer=$(echo ${sentence} | sed -e 's/\(.*\)/\L\1/' | sed -e 's@ @-@g')
+    answer=$(echo ${sentence} | sed -e 's/\(.*\)/\L\1/' | sed -e 's@ @_@g')
     echo "  - answer: ${answer}"
     printf "    question:\n      \"${question}\"\n"
 done
