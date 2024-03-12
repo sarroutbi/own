@@ -37,11 +37,11 @@ done
 echo "---"
 echo "created_by: ${AUTHOR}"
 echo "seed_examples:"
-cat "${SENTENCES_FILE}" | while read -r sentence;
+while read -r sentence;
 do
     question="Convert this text into its Snake case form: $(echo -n "${sentence}")"
     answer=$(echo "${sentence}" | sed -e 's/\(.*\)/\L\1/' | sed -e 's@ @_@g')
     echo "  - answer: ${answer}"
     printf "    question:\n      \"%s\"\n" "${question}"
-done
+done < "${SENTENCES_FILE}"
 echo "task_description: This skill provides the ability to convert text into its Snake case form."
