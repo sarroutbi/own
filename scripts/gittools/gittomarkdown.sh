@@ -19,8 +19,9 @@ LINES=""
 usage ()
 {
     echo
-    echo "Usage:   $0 -l lines [-h]"
-    echo "Example: $0 -l 30"
+    echo "Usage:   $0 -l lines / -c commit_id [-h]"
+    echo "Example: $0 -l 30 (will show latest 30 commits)"
+    echo "Example: $0 -c 90633e1 (will show commits from 90633e1 to the end)"
     echo
 }
 
@@ -30,10 +31,23 @@ usage_exit ()
     exit "$1"
 }
 
+dump_lines()
+{
+    git log --oneline | head -"${1}" | while read -r line;
+    do
+        commit_id=$(echo "${line}" | awk '{print $1}')
+        message=${line//${commit_id} /}
+        echo "* ${message} (${commit_id})"
+    done
+}
 
-while getopts "l:h" OPTION
+
+while getopts "l:c:h" OPTION
 do
-     case $OPTION in
+    case $OPTION in
+         c)
+             INITIAL_COMMIT_ID=$OPTARG
+             ;;
          l)
              LINES=$OPTARG
              ;;
@@ -47,13 +61,23 @@ do
 done
 
 
-if [ -z "${LINES}" ]; then
+if [ -z "${LINES}" ] && [ -z "${INITIAL_COMMIT_ID}" ];
+then
     usage_exit 1;
 fi
 
-git log --oneline | head -"${LINES}" | while read -r line;
-do
-    commit_id=$(echo "${line}" | awk '{print $1}')
-    message=${line//${commit_id} /}
-    echo "* ${message} (${commit_id})"
-done
+if [ -n "${LINES}" ] && [ -n "${INITIAL_COMMIT_ID}" ];
+then
+    echo
+    echo "Can not specify both lines and commit id"
+    usage_exit 1;
+fi
+
+if [ -n "${LINES}" ]; then
+    lines="${LINES}"
+elif [ -n "${INITIAL_COMMIT_ID}" ]; then
+    head_commit=$(git log | grep ^commit | head -n1 | awk '{print $2}')
+    lines=$(git log  | grep commit | sed -n "/${head_commit}/,/${INITIAL_COMMIT_ID}/p" | wc -l)
+fi
+
+dump_lines "${lines}"
