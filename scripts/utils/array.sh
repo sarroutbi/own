@@ -15,7 +15,7 @@
 echo "Testing array: $*"
 
 INPUT_ARRAY=$*
-data_array=(${INPUT_ARRAY})
+IFS=" " read -r -a data_array <<< "${INPUT_ARRAY}"
 echo "Array length:${#data_array[*]}"
 for ((ix=0; ix<${#data_array[*]}; ix++)) 
 do
