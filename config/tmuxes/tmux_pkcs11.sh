@@ -30,4 +30,4 @@ tmux new-window -t "${2}":3 -n '1mt01'
 tmux new-window -t "${2}":4 -n 'test'
 tmux new-window -t "${2}":5 -n 'doc'
 tmux new-window -t "${2}":6 -n 'misc'
-tmux attach-session
+tmux attach -t "${2}"
