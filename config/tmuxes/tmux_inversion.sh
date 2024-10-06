@@ -16,9 +16,15 @@
 #
 cd "${1}" 2>/dev/null || {
 	echo
-	echo "Directory not found"
+	echo "Directory $1 not found"
 	echo
 	exit 1
+}
+test -z ${2} 2>/dev/null && {
+        echo
+        echo "Must provide a session name as second parameter"
+        echo
+        exit 1
 }
 tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf

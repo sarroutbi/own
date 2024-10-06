@@ -14,8 +14,6 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
-echo "$1"
-echo "$2"
 cd ${1} 2>/dev/null || {
 	echo
 	echo "Directory ${1} not found"
@@ -28,7 +26,6 @@ test -z ${2} 2>/dev/null && {
 	echo
 	exit 1
 }
-
 tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf
 tmux rename-window 'console' #0
