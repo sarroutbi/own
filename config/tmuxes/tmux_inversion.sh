@@ -30,6 +30,6 @@ tmux new -s "${2}" -d
 tmux source-file ~/tmuxes/tmux.common.conf
 tmux rename-window 'reports-ods'
 tmux new-window -t "${2}":1 -n 'earnings'
-tmux new-window -t "${2}":8 -n 'DOC'
-tmux new-window -t "${2}":9 -n 'misc'
+tmux new-window -t "${2}":2 -n 'DOC'
+tmux new-window -t "${2}":3 -n 'misc'
 tmux attach -t "${2}" 
