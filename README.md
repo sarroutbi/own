@@ -18,6 +18,8 @@ myTaste/
 ├── dirRecursiveSintaxize01.sh
 ├── dirSintaxize00.sh
 └── dirSintaxize01.sh
+operator-sdk-installation/
+└── operator-sdk-install.sh
 strings/
 ├── noSpacesAndUpper.sh
 ├── noSpaces.sh
