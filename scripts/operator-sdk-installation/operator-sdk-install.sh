@@ -18,16 +18,19 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 DEFAULT_VERSION="1.39.1"
+CLEAN=""
 
 function usage() {
-  echo "$1 [-v version]"
+  echo "$1 [-v version] [-c (clean)]"
   echo ""
   exit "$2"
 }
 
-while getopts "v:h" arg
+while getopts "v:ch" arg
 do
   case "${arg}" in
+    c) CLEAN="y"
+       ;;
     v) VERSION=${OPTARG}
        ;;
     h) usage "$0" 0
@@ -52,3 +55,4 @@ curl -LO "${OPERATOR_SDK_DL_URL}/checksums.txt.asc"
 gpg -u "Operator SDK (release) <cncf-operator-sdk@cncf.io>" --verify checksums.txt.asc
 grep "operator-sdk_${OS}_${ARCH}" checksums.txt | sha256sum -c -
 chmod +x "operator-sdk_${OS}_${ARCH}" && sudo mv "operator-sdk_${OS}_${ARCH}" /usr/local/bin/operator-sdk
+test -n "${CLEAN}" && (rm -v checksums.txt*)
