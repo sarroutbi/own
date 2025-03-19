@@ -14,13 +14,13 @@
 # ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 # OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 #
-cd ${1} 2>/dev/null || {
+cd "${1}" 2>/dev/null || {
 	echo
 	echo "Directory ${1} not found"
 	echo
 	exit 1
 }
-test -z ${2} 2>/dev/null && {
+test -z "${2}" 2>/dev/null && {
 	echo
 	echo "Must provide a session name as second parameter"
 	echo
