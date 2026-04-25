@@ -45,6 +45,8 @@ utils/
 ├── tsocks.sh
 ├── tsocks_terminal.sh
 └── xtrlock.sh
+scanners/
+└── scan_firewall.sh
 xmonad/
 └── xmonad_reset_pipe.sh
 ```
