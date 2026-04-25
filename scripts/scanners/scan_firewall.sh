@@ -34,6 +34,19 @@ for arg in "$@"; do
     fi
 done
 
+# Save original SELinux mode and set permissive if enforcing
+SELINUX_WAS_ENFORCING=0
+if command -v getenforce &>/dev/null; then
+    SELINUX_MODE=$(getenforce)
+    if [[ "${SELINUX_MODE}" == "Enforcing" ]]; then
+        echo "SELinux is Enforcing. Setting to Permissive temporarily."
+        setenforce 0
+        SELINUX_WAS_ENFORCING=1
+    else
+        echo "SELinux is ${SELINUX_MODE}. No change needed."
+    fi
+fi
+
 # Add firewall rules: mDNS service + IPP ports (runtime only, no --permanent)
 add_rules() {
     firewall-cmd --add-service=mdns
@@ -75,6 +88,10 @@ if [[ ${RESTORE} -eq 1 ]]; then
             echo ""
             remove_rules
             echo "Firewall rules removed. Configuration restored."
+            if [[ ${SELINUX_WAS_ENFORCING} -eq 1 ]]; then
+                setenforce 1
+                echo "SELinux restored to Enforcing."
+            fi
             break
         fi
     done
