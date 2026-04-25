@@ -23,11 +23,14 @@ if [[ $(id -u) -ne 0 ]]; then
     exit 1
 fi
 
-# Parse --restore flag (disabled by default)
+# Parse flags (all disabled by default)
 RESTORE=0
+FORCE_POST_ENABLE=0
 for arg in "$@"; do
     if [[ "${arg}" == "--restore" ]]; then
         RESTORE=1
+    elif [[ "${arg}" == "--force-post-enable" ]]; then
+        FORCE_POST_ENABLE=1
     fi
 done
 
@@ -45,9 +48,22 @@ remove_rules() {
     firewall-cmd --remove-port=631/udp
 }
 
+# Make rules permanent so they survive firewall reloads/reboots
+force_enable_rules() {
+    firewall-cmd --permanent --add-service=mdns
+    firewall-cmd --permanent --add-port=631/tcp
+    firewall-cmd --permanent --add-port=631/udp
+}
+
 # Apply rules
 add_rules
 echo "Firewall rules applied: mDNS service, 631/tcp, 631/udp."
+
+# If --force-post-enable was passed, make rules permanent
+if [[ ${FORCE_POST_ENABLE} -eq 1 ]]; then
+    force_enable_rules
+    echo "Firewall rules made permanent."
+fi
 
 # If --restore was passed, wait for user then clean up
 if [[ ${RESTORE} -eq 1 ]]; then
